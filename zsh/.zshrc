@@ -9,7 +9,7 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/kisoo/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -111,14 +111,11 @@ alias ohmyzsh="nvim ~/.oh-my-zsh"
 
 alias nvimconfig="nvim ~/.config/nvim/init.vim"
 
-#POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon user dir vcs)
-#POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=status
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/kisoo/.sdkman"
 [[ -s "/Users/kisoo/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/kisoo/.sdkman/bin/sdkman-init.sh"
 
 [ -f "/Users/kisoo/.ghcup/env" ] && source "/Users/kisoo/.ghcup/env" # ghcup-env
-source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
