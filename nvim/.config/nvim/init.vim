@@ -1,19 +1,13 @@
-call plug#begin("~/.vim/plugged")
-" Plugin Section
-Plug 'dracula/vim'
-Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
-Plug 'arcticicestudio/nord-vim'
-Plug 'ryanoasis/vim-devicons'
-Plug 'lervag/vimtex'
-" Plug 'sirver/ultisnips'
-" Plug 'honza/vim-snippets'
-Plug 'L3MON4D3/LuaSnip', {'tag': 'v1.*'}
-call plug#end()
+" Load plugins.
+" The list of plugins are in `lua/plugins.lua`.
+lua require('plugins')
 
 colorscheme tokyonight 
 
 set number
 set relativenumber
+set ruler
+set statusline=\ %<%l:%v\ [%P]%=%a\ %h%m%r\ %F\ 
 
 let mapleader=","
 
@@ -35,10 +29,10 @@ inoremap <Down> <NOP>
 inoremap <Left> <NOP>
 inoremap <Right> <NOP>
  
-set ruler
-set statusline=\ %<%l:%v\ [%P]%=%a\ %h%m%r\ %F\ 
 
+set conceallevel=1
 let g:tex_flavor='latex'
+let g:tex_conceal='abdmg'
 
 let g:vimtex_view_method='skim'
 let g:vimtex_view_skim_sync = 1
@@ -46,13 +40,6 @@ let g:vimtex_view_skim_activate = 1
 let g:vimtex_quickfix_mode=0
 
 " let g:vimtex_compiler_latexmk_engines = 'lualatex'
-
-set conceallevel=1
-let g:tex_conceal='abdmg'
-
-let g:UltiSnipsExpandTrigger = '<tab>'
-let g:UltiSnipsJumpForwardTrigger = '<tab>'
-let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
 
 " Use Tab to expand and jump through snippets
