@@ -56,121 +56,168 @@ return {
     { condition = tex_utils.in_mathzone }
   ),
 
-  -- Greek letters
-  -- In fact, they should be expanded only on math context.
-  -- Snippet follows Greek keyboard.
-  -- starting with `v` (for `var`), one gets var letter.
-  -- starting with `o`, one gets capital letter. (`o` is just prefix free)
-  -- Maybe typing capital letter after `;` can be alternative.
-  -- starting with `vo`, one gets capital var letter.
+  -- LaTeX Greek letters
+  -- Triggers are from Greek keyboard.
+  -- Starting with `v` (for `var`), one gets var letter.
   s({ trig = ";a", snippetType = "autosnippet" },
     { t("\\alpha") },
     { condition = tex_utils.in_mathzone }
   ),
   s({ trig = ";b", snippetType = "autosnippet" },
-    { t("\\beta") }
+    { t("\\beta") },
+    { condition = tex_utils.in_mathzone }
   ),
   s({ trig = ";g", snippetType = "autosnippet" },
-    { t("\\gamma") }
+    { t("\\gamma") },
+    { condition = tex_utils.in_mathzone }
   ),
-  s({ trig = ";og", snippetType = "autosnippet" },
-    { t("\\Gamma") }
+  s({ trig = ";G", snippetType = "autosnippet" },
+    { t("\\Gamma") },
+    { condition = tex_utils.in_mathzone }
   ),
   s({ trig = ";d", snippetType = "autosnippet" },
-    { t("\\delta") }
+    { t("\\delta") },
+    { condition = tex_utils.in_mathzone }
   ),
-  s({ trig = ";od", snippetType = "autosnippet" },
-    { t("\\Delta") }
+  s({ trig = ";D", snippetType = "autosnippet" },
+    { t("\\Delta") },
+    { condition = tex_utils.in_mathzone }
   ),
   s({ trig = ";e", snippetType = "autosnippet" },
-    { t("\\epsilon") }
+    { t("\\epsilon") },
+    { condition = tex_utils.in_mathzone }
   ),
   s({ trig = ";ve", snippetType = "autosnippet" },
-    { t("\\varepsilon") }
+    { t("\\varepsilon") },
+    { condition = tex_utils.in_mathzone }
   ),
   s({ trig = ";z", snippetType = "autosnippet" },
-    { t("\\zeta") }
+    { t("\\zeta") },
+    { condition = tex_utils.in_mathzone }
   ),
   s({ trig = ";h", snippetType = "autosnippet" },
-    { t("\\eta") }
+    { t("\\eta") },
+    { condition = tex_utils.in_mathzone }
   ),
   s({ trig = ";q", snippetType = "autosnippet" },
-    { t("\\theta") }
+    { t("\\theta") },
+    { condition = tex_utils.in_mathzone }
   ),
-  s({ trig = ";oq", snippetType = "autosnippet" },
-    { t("\\Theta") }
+  s({ trig = ";vq", snippetType = "autosnippet" },
+    { t("\\vartheta") },
+    { condition = tex_utils.in_mathzone }
+  ),
+  s({ trig = ";Q", snippetType = "autosnippet" },
+    { t("\\Theta") },
+    { condition = tex_utils.in_mathzone }
   ),
   s({ trig = ";i", snippetType = "autosnippet" },
-    { t("\\iota") }
+    { t("\\iota") },
+    { condition = tex_utils.in_mathzone }
   ),
   s({ trig = ";k", snippetType = "autosnippet" },
-    { t("\\kappa") }
+    { t("\\kappa") },
+    { condition = tex_utils.in_mathzone }
   ),
   s({ trig = ";l", snippetType = "autosnippet" },
-    { t("\\lambda") }
+    { t("\\lambda") },
+    { condition = tex_utils.in_mathzone }
   ),
-  s({ trig = ";ol", snippetType = "autosnippet" },
-    { t("\\Lambda") }
+  s({ trig = ";L", snippetType = "autosnippet" },
+    { t("\\Lambda") },
+    { condition = tex_utils.in_mathzone }
   ),
   s({ trig = ";m", snippetType = "autosnippet" },
-    { t("\\mu") }
+    { t("\\mu") },
+    { condition = tex_utils.in_mathzone }
   ),
   s({ trig = ";n", snippetType = "autosnippet" },
-    { t("\\nu") }
+    { t("\\nu") },
+    { condition = tex_utils.in_mathzone }
   ),
   s({ trig = ";c", snippetType = "autosnippet" },
-    { t("\\xi") }
+    { t("\\xi") },
+    { condition = tex_utils.in_mathzone }
   ),
-  s({ trig = ";oc", snippetType = "autosnippet" },
-    { t("\\Xi") }
+  s({ trig = ";C", snippetType = "autosnippet" },
+    { t("\\Xi") },
+    { condition = tex_utils.in_mathzone }
   ),
   s({ trig = ";p", snippetType = "autosnippet" },
-    { t("\\pi") }
+    { t("\\pi") },
+    { condition = tex_utils.in_mathzone }
   ),
   s({ trig = ";vp", snippetType = "autosnippet" },
-    { t("\\varpi") }
+    { t("\\varpi") },
+    { condition = tex_utils.in_mathzone }
   ),
-  s({ trig = ";op", snippetType = "autosnippet" },
-    { t("\\Pi") }
+  s({ trig = ";P", snippetType = "autosnippet" },
+    { t("\\Pi") },
+    { condition = tex_utils.in_mathzone }
   ),
   s({ trig = ";r", snippetType = "autosnippet" },
-    { t("\\rho") }
+    { t("\\rho") },
+    { condition = tex_utils.in_mathzone }
+  ),
+  s({ trig = ";vr", snippetType = "autosnippet" },
+    { t("\\varrho") },
+    { condition = tex_utils.in_mathzone }
   ),
   s({ trig = ";s", snippetType = "autosnippet" },
-    { t("\\sigma") }
+    { t("\\sigma") },
+    { condition = tex_utils.in_mathzone }
   ),
-  s({ trig = ";os", snippetType = "autosnippet" },
-    { t("\\Sigma") }
+  s({ trig = ";vs", snippetType = "autosnippet" },
+    { t("\\varsigma") },
+    { condition = tex_utils.in_mathzone }
+  ),
+  s({ trig = ";S", snippetType = "autosnippet" },
+    { t("\\Sigma") },
+    { condition = tex_utils.in_mathzone }
   ),
   s({ trig = ";t", snippetType = "autosnippet" },
-    { t("\\tau") }
+    { t("\\tau") },
+    { condition = tex_utils.in_mathzone }
   ),
-  s({ trig = ";u", snippetType = "autosnippet" },
-    { t("\\upsilon") }
+  s({ trig = ";u", snippettype = "autosnippet" },
+    { t("\\upsilon") },
+    { condition = tex_utils.in_mathzone }
+  ),
+  s({ trig = ";U", snippettype = "autosnippet" },
+    { t("\\Upsilon") },
+    { condition = tex_utils.in_mathzone }
   ),
   s({ trig = ";f", snippetType = "autosnippet" },
-    { t("\\phi") }
+    { t("\\phi") },
+    { condition = tex_utils.in_mathzone }
   ),
   s({ trig = ";vf", snippetType = "autosnippet" },
-    { t("\\varphi") }
+    { t("\\varphi") },
+    { condition = tex_utils.in_mathzone }
   ),
-  s({ trig = ";of", snippetType = "autosnippet" },
-    { t("\\Phi") }
+  s({ trig = ";F", snippetType = "autosnippet" },
+    { t("\\Phi") },
+    { condition = tex_utils.in_mathzone }
   ),
   s({ trig = ";x", snippetType = "autosnippet" },
-    { t("\\chi") }
+    { t("\\chi") },
+    { condition = tex_utils.in_mathzone }
   ),
   s({ trig = ";y", snippetType = "autosnippet" },
-    { t("\\psi") }
+    { t("\\psi") },
+    { condition = tex_utils.in_mathzone }
   ),
-  s({ trig = ";oy", snippetType = "autosnippet" },
-    { t("\\Psi") }
+  s({ trig = ";Y", snippetType = "autosnippet" },
+    { t("\\Psi") },
+    { condition = tex_utils.in_mathzone }
   ),
   s({ trig = ";w", snippetType = "autosnippet" },
-    { t("\\omega") }
+    { t("\\omega") },
+    { condition = tex_utils.in_mathzone }
   ),
-  s({ trig = ";ow", snippetType = "autosnippet" },
-    { t("\\Omega") }
+  s({ trig = ";W", snippetType = "autosnippet" },
+    { t("\\Omega") },
+    { condition = tex_utils.in_mathzone }
   ),
 
 }

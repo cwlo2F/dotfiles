@@ -30,17 +30,18 @@ inoremap <Left> <NOP>
 inoremap <Right> <NOP>
  
 
-set conceallevel=1
 let g:tex_flavor='latex'
+
+" LaTeX concealment
+set conceallevel=1
 let g:tex_conceal='abdmg'
 
-let g:vimtex_view_method='skim'
+let g:vimtex_view_method = 'skim'
 let g:vimtex_view_skim_sync = 1
 let g:vimtex_view_skim_activate = 1
 let g:vimtex_quickfix_mode=0
 
-" let g:vimtex_compiler_latexmk_engines = 'lualatex'
-
+let g:vimtex_compiler_method = 'latexmk'
 
 " Use Tab to expand and jump through snippets
 imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>' 
