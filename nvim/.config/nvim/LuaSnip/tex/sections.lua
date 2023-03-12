@@ -1,31 +1,31 @@
 return {
   s(
-    {trig = "chap"},
+    { trig = "chap" },
     fmta("\\chapter{<>}", { i(1, "chapter name") })
   ),
 
   s(
-    {trig = "sec"},
+    { trig = "sec" },
     fmta("\\section{<>}", { i(1, "section name") })
   ),
 
   s(
-    {trig = "sub"},
+    { trig = "sub" },
     fmta("\\subsection{<>}", { i(1, "subsection name") })
   ),
 
   s(
-    {trig = "subsub"},
+    { trig = "subsub" },
     fmta("\\subsubsection{<>}", { i(1, "subsubsection name") })
   ),
 
   s(
-    {trig = "par"},
+    { trig = "par" },
     fmta("\\paragraph{<>}", { i(1, "paragraph name") })
   ),
 
   s(
-    {trig = "subpar"},
+    { trig = "subpar" },
     fmta("\\subparagraph{<>}", { i(1, "subparagraph name") })
   ),
 }

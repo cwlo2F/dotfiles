@@ -3,21 +3,29 @@ local tex_utils = require("tex_utils")
 return {
   -- mathzone
   s({ trig = "mk", dscr = "Inline Math", snippetType = "autosnippet" },
-    fmta(
-      "\\(<>\\)",
-      { i(1) }
-    ),
+    fmta("\\(<>\\)", { i(1) }),
     { condition = tex_utils.in_text }
   ),
   s({ trig = "dm", dscr = "Display Math", snippetType = "autosnippet" },
-    fmta(
-      "\\[\n<>\n\\]",
-      { i(1) }
-    ),
+    fmta("\\[\n<>\n\\]", { i(1) }),
     { condition = tex_utils.in_text }
   ),
 
   -- math
+
+  s({ trig = "inn", snippetType = "autosnippet" },
+    { t("\\in") },
+    { condition = tex_utils.in_mathzone }
+  ),
+
+  s({ trig = "**", snippetType = "autosnippet" },
+    { t("\\cdot") },
+    { condition = tex_utils.in_mathzone }
+  ),
+  s({ trig = "xx", snippetType = "autosnippet" },
+    { t("\\times") },
+    { condition = tex_utils.in_mathzone }
+  ),
   s({ trig = "//", snippetType = "autosnippet" },
     fmta(
       "\\frac{<>}{<>}",
@@ -25,8 +33,51 @@ return {
     ),
     { condition = tex_utils.in_mathzone }
   ),
+
+  s({ trig = "td" },
+    fmta("^{<>}", { i(1) }),
+    { condition = tex_utils.in_mathzone }
+  ),
+  s({ trig = "sd" },
+    fmta("_{<>}", { i(1) }),
+    { condition = tex_utils.in_mathzone }
+  ),
+
+  s({ trig = "dint" },
+    fmta("\\int_{<>}^{<>}", { i(1), i(2) }),
+    { condition = tex_utils.in_mathzone }
+  ),
+  s({ trig = "dsum" },
+    fmta("\\sum_{<>}^{<>}", { i(1), i(2) }),
+    { condition = tex_utils.in_mathzone }
+  ),
+  s({ trig = "dprod" },
+    fmta("\\prod_{<>}^{<>}", { i(1), i(2) }),
+    { condition = tex_utils.in_mathzone }
+  ),
+  s({ trig = "dand" },
+    fmta("\\bigwedge_{<>}^{<>}", { i(1), i(2) }),
+    { condition = tex_utils.in_mathzone }
+  ),
+  s({ trig = "dor" },
+    fmta("\\bigvee_{<>}^{<>}", { i(1), i(2) }),
+    { condition = tex_utils.in_mathzone }
+  ),
+  s({ trig = "dcup" },
+    fmta("\\bigcup_{<>}^{<>}", { i(1), i(2) }),
+    { condition = tex_utils.in_mathzone }
+  ),
+  s({ trig = "dcap" },
+    fmta("\\bigcap_{<>}^{<>}", { i(1), i(2) }),
+    { condition = tex_utils.in_mathzone }
+  ),
+
   s({ trig = "->", snippetType = "autosnippet" },
     { t("\\to") },
+    { condition = tex_utils.in_mathzone }
+  ),
+  s({ trig = "!>", snippetType = "autosnippet" },
+    { t("\\mapsto") },
     { condition = tex_utils.in_mathzone }
   ),
   s({ trig = "c>", snippetType = "autosnippet" },
@@ -34,7 +85,24 @@ return {
     { condition = tex_utils.in_mathzone }
   ),
 
+  -- amsmath matrices
+  s({ trig = "([pbBvV])mat", regTrig = true },
+    fmta(
+      "\\begin{<>matrix} <> \\end{<>matrix}",
+      { 
+	f( function(_, snip) return snip.captures[1] end ),
+	i(1),
+	f( function(_, snip) return snip.captures[1] end )
+      }
+    ),
+    { condition = tex_utils.in_mathzone }
+  ),
+
   -- Sets
+  s({ trig = "OO", snippetType = "autosnippet" },
+    { t("\\emptyset") },
+    { condition = tex_utils.in_mathzone }
+  ),
   s({ trig = "NN", snippetType = "autosnippet" },
     { t("\\mathbb{N}") },
     { condition = tex_utils.in_mathzone }
@@ -117,6 +185,10 @@ return {
   ),
   s({ trig = ";k", snippetType = "autosnippet" },
     { t("\\kappa") },
+    { condition = tex_utils.in_mathzone }
+  ),
+  s({ trig = ";vk", snippetType = "autosnippet" },
+    { t("\\varkappa") },
     { condition = tex_utils.in_mathzone }
   ),
   s({ trig = ";l", snippetType = "autosnippet" },
