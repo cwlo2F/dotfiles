@@ -43,6 +43,11 @@ return {
     { condition = tex_utils.in_mathzone }
   ),
 
+  s({ trig = "hat" },
+    fmta("\\hat{<>}", { i(1) }),
+    { condition = tex_utils.in_mathzone }
+  ),
+
   s({ trig = "dint" },
     fmta("\\int_{<>}^{<>}", { i(1), i(2) }),
     { condition = tex_utils.in_mathzone }
@@ -72,6 +77,7 @@ return {
     { condition = tex_utils.in_mathzone }
   ),
 
+  -- arrows
   s({ trig = "->", snippetType = "autosnippet" },
     { t("\\to") },
     { condition = tex_utils.in_mathzone }
