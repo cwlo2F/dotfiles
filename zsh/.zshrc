@@ -87,6 +87,7 @@ source $ZSH/oh-my-zsh.sh
 
 # export MANPATH="/usr/local/man:$MANPATH"
 export MYVIMRC="$HOME/.config/nvim/init.vim"
+export NVIMCONFIG="$HOME/.config/nvim"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -112,11 +113,11 @@ alias ohmyzsh="nvim $HOME/.oh-my-zsh"
 
 alias nvimconfig="nvim $MYVIMRC"
 
+export PATH="$HOME/.ghcup/bin:$PATH"
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
-[ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env" # ghcup-env
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
