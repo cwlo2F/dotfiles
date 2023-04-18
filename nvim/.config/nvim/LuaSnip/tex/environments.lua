@@ -4,7 +4,7 @@ return {
   s({ trig = "env", dscr = "LaTeX environment" },
     fmta([[
 \begin{<>}
-    <>
+<>
 \end{<>}
       ]],
 
@@ -15,10 +15,10 @@ return {
   s({ trig = "fig", dscr = "LaTeX Figure environment" },
     fmta([[
 \begin{figure}[<>]
-    \centering
-    \includegraphics[width=0.8\textwidth]{<>}
-    \caption{<>}
-    \label{fig:<>}
+\centering
+\includegraphics[width=0.8\textwidth]{<>}
+\caption{<>}
+\label{fig:<>}
 \end{figure}
       ]],
 
@@ -29,7 +29,7 @@ return {
   s({ trig = "enum", dscr = "Enumerate" },
     fmta([[
 \begin{enumerate}
-    \item <>
+\item <>
 \end{enumerate}
     ]],
     { i(1) }
@@ -39,7 +39,7 @@ return {
   s({ trig = "item", dscr = "Itemize" },
     fmta([[
 \begin{itemize}
-    \item <>
+\item <>
 \end{itemize}
     ]],
     { i(1) }
@@ -49,7 +49,7 @@ return {
   s({ trig = "case", dscr = "Cases" },
     fmta([[
 \begin{cases}
-    <>
+<>
 \end{cases}
     ]],
     { i(1) }
@@ -61,7 +61,7 @@ return {
   s({ trig = "thm", dscr = "theorem" },
     fmta([[
 \begin{theorem}
-    <>
+<>
 \end{theorem}
       ]],
       { i(1) }
@@ -70,7 +70,7 @@ return {
   s({ trig = "lem", dscr = "lemma" },
     fmta([[
 \begin{lemma}
-    <>
+<>
 \end{lemma}
       ]],
       { i(1) }
@@ -79,7 +79,7 @@ return {
   s({ trig = "cor", dscr = "corollary" },
     fmta([[
 \begin{corollary}
-    <>
+<>
 \end{corollary}
       ]],
       { i(1) }
@@ -88,7 +88,7 @@ return {
   s({ trig = "prop", dscr = "proposition" },
     fmta([[
 \begin{proposition}
-    <>
+<>
 \end{proposition}
       ]],
       { i(1) }
@@ -97,7 +97,7 @@ return {
   s({ trig = "prf", dscr = "proof" },
     fmta([[
 \begin{proof}
-    <>
+<>
 \end{proof}
       ]],
       { i(1) }
@@ -106,17 +106,26 @@ return {
   s({ trig = "def", dscr = "definition" },
     fmta([[
 \begin{definition}
-    <>
+<>
 \end{definition}
       ]],
       { i(1) }
     )
   ),
 
+  s({ trig = "example", dscr = "example" },
+    fmta([[
+\begin{example}
+<>
+\end{example}
+      ]],
+      { i(1) }
+    )
+  ),
   s({ trig = "ali", dscr = "LaTeX align environment" },
     fmta([[
 \begin{align*}
-    <>
+<>
 \end{align*}
       ]],
       { i(1) }

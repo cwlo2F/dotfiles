@@ -1,11 +1,11 @@
 local tex_utils = require("tex_utils")
 
 return {
-  s({ trig = "(", dscr = "Parentheses", snippetType = "autosnippet" },
+  s({ trig = "(", dscr = "Parentheses", wordTrig = false, snippetType = "autosnippet" },
     fmta("(<>)", { i(1) })
   ),
 
-  s({ trig = "{", dscr = "Curly braces", snippetType = "autosnippet" },
+  s({ trig = "{", dscr = "Curly braces", wordTrig = false, snippetType = "autosnippet" },
     fmta("{<>}", { i(1) })
   ),
 

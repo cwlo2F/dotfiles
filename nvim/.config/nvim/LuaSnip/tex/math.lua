@@ -34,11 +34,19 @@ return {
     { condition = tex_utils.in_mathzone }
   ),
 
-  s({ trig = "td" },
+  s({ trig = "td", wordTrig = false },
     fmta("^{<>}", { i(1) }),
     { condition = tex_utils.in_mathzone }
   ),
-  s({ trig = "sd" },
+  s({ trig = "^^", wordTrig = false },
+    fmta("^{<>}", { i(1) }),
+    { condition = tex_utils.in_mathzone }
+  ), 
+  s({ trig = "sd", wordTrig = false },
+    fmta("_{<>}", { i(1) }),
+    { condition = tex_utils.in_mathzone }
+  ),
+  s({ trig = "__", wordTrig = false },
     fmta("_{<>}", { i(1) }),
     { condition = tex_utils.in_mathzone }
   ),
