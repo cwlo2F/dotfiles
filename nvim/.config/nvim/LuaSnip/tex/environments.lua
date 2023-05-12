@@ -1,4 +1,5 @@
 local line_begin = require("luasnip.extras.expand_conditions").line_begin
+local tex_utils = require("tex_utils")
 
 return {
   s({ trig = "env", dscr = "LaTeX environment" },
@@ -44,6 +45,11 @@ return {
     ]],
     { i(1) }
     )
+  ),
+
+  s({ trig = "*", dscr = "Itemize item", snippetType = "autosnippet" },
+    { t("\\item ") },
+    { condition = tex_utils.in_itemize * line_begin }
   ),
 
   s({ trig = "case", dscr = "Cases" },

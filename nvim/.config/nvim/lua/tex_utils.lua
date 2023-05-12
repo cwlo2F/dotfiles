@@ -21,4 +21,9 @@ tex_utils.in_env = function(name)
   return (is_inside[1] > 0 and is_inside[2] > 0)
 end
 
+-- itemize environment detection
+tex_utils.in_itemize = function()
+  return tex_utils.in_env('itemize')
+end
+
 return tex_utils
