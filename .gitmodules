@@ -1,0 +1,3 @@
+[submodule "nvim/.config/nvim/LuaSnip/tex"]
+	path = nvim/.config/nvim/LuaSnip/tex
+	url = https://github.com/cwlo2F/tex-snippets.git
