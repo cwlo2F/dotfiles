@@ -86,18 +86,18 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
-export MYVIMRC="$HOME/.config/nvim/init.lua"
-export NVIMCONFIG="$HOME/.config/nvim"
+# export MYVIMRC="$HOME/.config/nvim/init.vim"
+# export NVIMCONFIG="$HOME/.config/nvim"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='nvim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -108,20 +108,27 @@ export NVIMCONFIG="$HOME/.config/nvim"
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconfig="nvim $HOME/.zshrc"
-alias ohmyzsh="nvim $HOME/.oh-my-zsh"
+alias zshconfig="$EDITOR $HOME/.zshrc"
+alias ohmyzsh="$EDITOR $HOME/.oh-my-zsh"
 
-alias nvimconfig="nvim $MYVIMRC"
+alias nvimconfig="$EDITOR $MYVIMRC"
 
 export PATH="$HOME/.ghcup/bin:$PATH"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-. "$HOME/.cargo/env"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+[ -f "/Users/kisoo/.ghcup/env" ] && source "/Users/kisoo/.ghcup/env" # ghcup-env
+
+
+# BEGIN opam configuration
+# This is useful if you're using opam as it adds:
+#   - the correct directories to the PATH
+#   - auto-completion for the opam binary
+# This section can be safely removed at any time if needed.
+[[ ! -r '/Users/kisoo/.opam/opam-init/init.zsh' ]] || source '/Users/kisoo/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
+# END opam configuration
