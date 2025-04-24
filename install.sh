@@ -37,10 +37,18 @@ else
     msg "Cloning Neovim source to $NVIM_SRC"
     git clone https://github.com/neovim/neovim.git "$NVIM_SRC"
   fi
+
   cd "$NVIM_SRC"
-  git fetch --tags
+  msg "Updating Neovim source..."
+
+  git fetch origin
+  git checkout master
+  git pull origin master
+  
+  git fetch --tags --force origin stable
   git checkout stable
-  msg "Building Neovim from source..."
+
+  msg "Building Neovim..."
   make CMAKE_BUILD_TYPE=RelWithDebInfo
   sudo make install
   cd -
