@@ -1,0 +1,13 @@
+{
+  "LuaSnip": { "branch": "master", "commit": "03c8e67eb7293c404845b3982db895d59c0d1538" },
+  "haskell-tools.nvim": { "branch": "1.x.x", "commit": "0bf0c887eeb7febe2199b7638befb4138d293111" },
+  "lazy.nvim": { "branch": "main", "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a" },
+  "mason.nvim": { "branch": "main", "commit": "fc98833b6da5de5a9c5b1446ac541577059555be" },
+  "merlin": { "branch": "main", "commit": "82c9894174bd4d3ba18c6e24aa63200c0ca5d7a3" },
+  "nvim-lspconfig": { "branch": "master", "commit": "8b0f47d851ee5343d38fe194a06ad16b9b9bd086" },
+  "plenary.nvim": { "branch": "master", "commit": "857c5ac632080dba10aae49dba902ce3abf91b35" },
+  "rust.vim": { "branch": "master", "commit": "889b9a7515db477f4cb6808bef1769e53493c578" },
+  "tokyonight.nvim": { "branch": "main", "commit": "057ef5d260c1931f1dffd0f052c685dcd14100a3" },
+  "vim-devicons": { "branch": "master", "commit": "71f239af28b7214eebb60d4ea5bd040291fb7e33" },
+  "vimtex": { "branch": "master", "commit": "cfd4e528b0b44804b51a2929ddcde0b99ebae52f" }
+}

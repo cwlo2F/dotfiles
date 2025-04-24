@@ -1,26 +1,55 @@
-vim.cmd [[packadd packer.nvim]]
+return {
+  -- lazy.nvim
+  { "folke/lazy.nvim", version = "*"},
 
-return require('packer').startup(function(use)
-  -- Packer can manage itself
-  use 'wbthomason/packer.nvim'
+  -- Colorscheme
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.cmd([[colorscheme tokyonight]])
+    end,
+  },
 
-  use "nvim-lua/plenary.nvim"
-  use 'folke/tokyonight.nvim'
-  use 'ryanoasis/vim-devicons'
+  "nvim-lua/plenary.nvim",
+  "ryanoasis/vim-devicons",
 
-  use 'lervag/vimtex'
-  use ({"L3MON4D3/LuaSnip", tag = "v2.*"})
+  -- TeX
+  "lervag/vimtex",
+  {
+    "L3MON4D3/LuaSnip",
+    version = "v2.*",
+    build   = "make install_jsregexp",
+    config  = function()
+      require("luasnip.loaders.from_lua").lazy_load {
+        paths = vim.fn.stdpath("config") .. "/LuaSnip"
+      }
+    end,
+  },
 
-  use {
-    'mrcjkb/haskell-tools.nvim',
-    requires = {
-      'nvim-lua/plenary.nvim',
-    },
-    branch = '1.x.x',
-  }
-  use { 'neoclide/coc.nvim', branch = 'release', }
+  -- Haskell
+  {
+    "mrcjkb/haskell-tools.nvim",
+    branch = "1.x.x",
+    dependencies = { "nvim-lua/plenary.nvim" },
+  },
 
-  use 'rust-lang/rust.vim'
+  -- LSP
+  {
+    "williamboman/mason.nvim",
+    build = ":MasonUpdate",
+    config = true,
+  },
+  {
+    "neovim/nvim-lspconfig",
+    dependencies = { "williamboman/mason.nvim" },
+    config = function()
+      require("lspconfig").lua_ls.setup {}
+    end
+  },
 
-  use 'ocaml/merlin'
-end)
+  "rust-lang/rust.vim",
+  "ocaml/merlin",
+}
+
