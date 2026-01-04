@@ -12,5 +12,5 @@ vim.opt.rtp:prepend(lazypath)
 -- The list of plugins are in `lua/plugins.lua`.
 require("lazy").setup(require("plugins"))
 
-require('mappings')
 require('settings')
+require('mappings')
