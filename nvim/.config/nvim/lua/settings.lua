@@ -10,8 +10,6 @@ vim.opt.ruler = true
 
 vim.opt.conceallevel = 1
 
-vim.cmd.colorscheme('tokyonight')
-
 vim.opt.expandtab = true
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
@@ -22,17 +20,13 @@ vim.opt.shiftwidth = 4
 require("luasnip").config.set_config({ -- Setting LuaSnip config
 
   -- Enable autotriggered snippets
-  enable_autosnippets = true, 
+  enable_autosnippets = true,
 
-  -- Use Tab to trigger visual selelection
+  -- Use Tab to trigger visual selection
   store_selection_keys = "<Tab>",
 })
 
--- Load LuaSnip snippets
-require("luasnip.loaders.from_lua").lazy_load({paths = "~/.config/nvim/LuaSnip"})
-
 -- Reload LuaSnip keymap
-vim.keymap.set("n", "<Leader>L", 
+vim.keymap.set("n", "<Leader>L",
   function() require("luasnip.loaders.from_lua").load({paths = "~/.config/nvim/LuaSnip/"}) end,
---  "<CMD>lua require(\"luasnip.loaders.from_lua\").load({paths = \"~/.config/nvim/LuaSnip/\"})<Return>",
   { noremap = true })
